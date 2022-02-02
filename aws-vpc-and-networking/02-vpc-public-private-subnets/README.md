@@ -2,7 +2,7 @@
 
 ## Prerequisite
 Please follow the part 1, where we created the VPC, Public Subnet.
-### Link: [VPC With One Public Subnet](/01-vpc-one-public-subnet/)
+### Link: [VPC With One Public Subnet](/aws-vpc-and-networking/01-vpc-one-public-subnet/)
 
 ## Architecure
 ![](images/vpc-public-private-subnets.png)

@@ -1,4 +1,4 @@
-# Setup AWS VPC with One Public And One Private Subnets and NAT Gateway
+# Setup AWS VPC with One Public And One Private Subnets and VPC Endpoint For S3
 
 ## Prerequisite
 Please follow the part 1 & 2, where we created the VPC, Public Subnet and Part 2 where we created Private Subnet

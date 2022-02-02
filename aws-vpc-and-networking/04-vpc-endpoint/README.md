@@ -2,8 +2,8 @@
 
 ## Prerequisite
 Please follow the part 1 & 2, where we created the VPC, Public Subnet and Part 2 where we created Private Subnet
-### Link: [VPC With One Public Subnet](01-vpc-one-public-subnet/)
-### Link: [VPC With Public And Private Subnet](02-vpc-public-private-subnets/)
+### Link: [VPC With One Public Subnet](/aws-vpc-and-networking/01-vpc-one-public-subnet/)
+### Link: [VPC With Public And Private Subnet](/aws-vpc-and-networking/02-vpc-public-private-subnets/)
 
 ## Architecure
 ![](images/vpc-endpoint.png)

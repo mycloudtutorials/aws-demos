@@ -1,0 +1,60 @@
+#Create Topic
+aws sns create-topic --name test-subscription-filter-topic
+
+Returns
+{
+    "TopicArn": "arn:aws:sns:us-west-2:<AWSAccountId>:test-subscription-filter-topic"
+}
+
+# Create Subscriptions
+aws sns subscribe \
+--topic-arn arn:aws:sns:us-west-2:<AWSAccountId>:test-subscription-filter-topic \
+--protocol email \
+--notification-endpoint dev@yopmail.com \
+--attributes '{"FilterPolicy": "{\"TARGET\": [\"dev\"]}"}'
+
+aws sns subscribe \
+--topic-arn arn:aws:sns:us-west-2:<AWSAccountId>:test-subscription-filter-topic \
+--protocol email \
+--notification-endpoint business@yopmail.com \
+--attributes '{"FilterPolicy": "{\"TARGET\": [\"business\"]}"}'
+
+aws sns subscribe \
+--topic-arn arn:aws:sns:us-west-2:<AWSAccountId>:test-subscription-filter-topic \
+--protocol email \
+--notification-endpoint ops@yopmail.com \
+--attributes '{"FilterPolicy": "{\"TARGET\": [\"ops\"]}"}'
+
+
+# Publish Messages
+
+aws sns publish \
+ --topic-arn arn:aws:sns:us-west-2:<AWSAccountId>:test-subscription-filter-topic \
+ --message-structure string \
+ --message "Sample Message Body for DEV " \
+ --subject "Sample Message Subject - only to dev" \
+ --message-attributes '{"TARGET":{"DataType":"String","StringValue":"dev"}}'
+
+ aws sns publish \
+ --topic-arn arn:aws:sns:us-west-2:<AWSAccountId>:test-subscription-filter-topic \
+ --message-structure string \
+ --message "Sample Message Body for Business" \
+ --subject "Sample Message Subject - only to business" \
+ --message-attributes '{"TARGET":{"DataType":"String","StringValue":"business"}}'
+
+
+ aws sns publish  \
+ --topic-arn arn:aws:sns:us-west-2:<AWSAccountId>:test-subscription-filter-topic  \
+ --message-structure string  \
+ --message "Sample Message Body for both Business and DEV"  \
+ --subject "Sample Message Subject - both business and dev"  \
+ --message-attributes '{"TARGET":{"DataType":"String.Array","StringValue":"[\"business\", \"dev\"]"}}'
+
+
+ aws sns publish  \
+ --topic-arn arn:aws:sns:us-west-2:<AWSAccountId>:test-subscription-filter-topic  \
+ --message-structure string  \
+ --message "Sample Message Body for DEV and OPS"  \
+ --subject "Sample Message Subject - dev and ops"  \
+ --message-attributes '{"TARGET":{"DataType":"String.Array","StringValue":"[\"dev\", \"ops\"]"}}'
+ 

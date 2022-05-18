@@ -15,6 +15,6 @@ In this demo, we will perform the following tasks, step by step
 3. Create NAT Gateway in Public Subnet, Set a route in the Private Subnet's Route table, Now Private instance can access Internet
 4. Setup VPC End point to S3 service and attach to the Private Subnet's Route. EC2 instance should be able to access S3 without Internet access.
 
-### Youtube: https://www.youtube.com/channel/UCqGYxFy2OWDvyB84jyNaUvw
+### Youtube Video For This Tutorial: https://youtu.be/4z_-VkRg_Bs
 
 
